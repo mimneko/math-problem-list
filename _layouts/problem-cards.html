@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+{% for problem in site.data.recurrence-relation.problems %}
+<div class="card">
+    {{ problem.statement | strip_newlines }}
+    <hr>
+    {{ problem.solution | strip_newlines }}
+</div>
+{% endfor %}
