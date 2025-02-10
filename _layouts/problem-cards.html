@@ -2,10 +2,36 @@
 layout: default
 ---
 
+{% comment %}
 {% for problem in site.data.recurrence-relation.problems %}
 <div class="card">
     {{ problem.statement | strip_newlines }}
     <hr>
     {{ problem.solution | strip_newlines }}
+</div>
+{% endfor %}
+{% endcomment %}
+
+{% for problem in site.data.math_problems.problems %}
+<div class="card">
+    {{ problem.statement | strip_newlines }}
+    <hr>
+    {{ problem.solution | strip_newlines }}
+    <hr>
+    <details>
+        <summary>GPTによる解答を表示</summary>
+        {{ problem.gpt | newline_to_br }}
+        <hr>
+        {{ problem.solution | strip_newlines }}
+        <div style="text-align: right;">（
+        {% if problem.is_correct == true %}
+            正解
+        {% elsif problem.is_correct == false %}
+            間違い
+        {% else %}
+            正誤不明
+        {% endif %}
+        ）</div>
+    </details>
 </div>
 {% endfor %}
