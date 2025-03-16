@@ -14,3 +14,6 @@
 1. `solve-by-gpt.py` で GPT が `recurrence-relation.json` の問題を解き、 `math_problems.xml` に書き込む。
 1. `xml2json.py` で `math_problems.xml` を `math_problems.json` に変換する。
 1. `jekyll` で `math_problems.json` をもとに web ページを作成する。
+
+## 2025-03-16追記
+- $a_{n+1}=f(n)a_n+q$ 型は誘導が必要かも
