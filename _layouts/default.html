@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }}</title>
+    <!-- Katex CSS and JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
-            }
-        };
-    </script>
-    <script type="text/javascript" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},  // ブロック数式
+                    {left: "$", right: "$", display: false},   // インライン数式
+                ]
+            });
+        });
     </script>
     <style>
         hr {
@@ -24,6 +27,13 @@
             width: 90%;
             max-width: 768px;
             margin: 0 auto;
+        }
+        .info {
+            background-color: #ececec;
+            color: red;
+            border-radius: 5px;
+            padding: 16px;
+            margin: 8px;
         }
         .card {
             border: 1px solid #ccc;
