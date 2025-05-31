@@ -36,9 +36,11 @@
             "id": "PROB_0001",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = -3, \\quad a_{n+1} =a_n + 4 $$",
             "solution": "$$ a_n = 4n - 7 $$",
-            "answer_steps": [
+            "pattern": 1,
+            "steps": [
                 {
-                    "content": []
+                    "content": ["$a_{n+1}-a_n=4$より、数列$\\{a_n\\}$は初項$a_1=-1$、公差$4$の等差数列であるから$$a_n=-3+(n-1)\\cdot 4=4n-7$$"],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -59,9 +61,11 @@
             "id": "PROB_0002",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 4, \\quad 2a_{n+1} + 3a_n = 0 $$",
             "solution": "$$ a_n = 4 \\cdot \\left( -\\frac{3}{2} \\right)^{n-1} $$",
-            "answer_steps": [
+            "pattern": 2,
+            "steps": [
                 {
-                    "content": []
+                    "content": ["$a_{n+1}=-\\frac{3}{2}a_n$より、数列$\\{a_n\\}$は初項$a_1=4$、公比$-\\frac{3}{2}$の等比数列であるから$$a_n=4\\cdot\\left(-\\frac{3}{2}\\right)^{n-1}$$"],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -82,9 +86,14 @@
             "id": "PROB_0003",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = a_n + 2^n - 3n + 1 $$",
             "solution": "$$ a_n = 2^n - \\frac{3}{2}n^2 + \\frac{5}{2}n - 2 $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [
+                        "$a_{n+1}-a_n=2^n-3n+1$より、数列$\\{a_n\\}$の階差数列の第$n$項は$2^n-3n+1$であるから、$n\\geq 2$のとき$$\\begin{align}a_n&=a_1+\\sum_{k=1}^{n-1}(2^k-3k+1)\\\\&=1+\\sum_{k=1}^{n-1}2^k-3\\sum_{k=1}^{n-1}k+\\sum_{k=1}^{n-1}1\\\\&=1+\\frac{2(2^{n-1}-1)}{2-1}-3\\cdot\\frac{1}{2}(n-1)n+(n-1)\\\\&=2^n-\\frac{3}{2}n^2+\\frac{5}{2}n-2\\cdots\\cdots(1)\\end{align}$$$n=1$のとき$$2^1-\\frac{3}{2}\\cdot 1^2+\\frac{5}{2}\\cdot 1-2=1$$$a_1=1$であるから、$(1)$は$n=1$のときにも成り立つ。",
+                        "したがって$$a_n=2^n-\\frac{3}{2}n^2+\\frac{5}{2}n-2$$"
+                    ],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -105,9 +114,18 @@
             "id": "PROB_0004",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 6, \\quad a_{n+1} = 4a_n - 3 $$",
             "solution": "$$ a_n = 5 \\cdot 4^{n-1} + 1 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": ["$a_{n+1}=4a_n-3$を変形すると$$a_{n+1}-1=4(a_n-1)$$$a_n-1=b_n$とおくと$$b_{n+1}=4b_n,\\quad b_1=a_1-1=6-1=5$$よって、数列$\\{b_n\\}$は初項$5$、公比$4$の等比数列であるから$$b_n=5\\cdot 4^{n-1}$$ゆえに$$a_n=b_n+1=5\\cdot 4^{n-1}+1$$"],
+                    "source": { "index": 0, "type": "解答" }
+                },
+                {
+                    "content": [
+                        "$a_{n+1}=4a_n-3\\cdots\\cdots(1)$で$n$の代わりに$n+1$とおくと$$a_{n+2}=4a_{n+1}-3\\cdots\\cdots(2)$$$(2)-(1)$から$$a_{n+2}-a_{n+1}=4(a_{n+1}-a_n)$$数列$\\{a_n\\}$の階差数列を$\\{b_n\\}$とすると$$b_{n+1}=4b_n,\\quad b_1=a_2-a_1=(4\\cdot 6-3)=15$$よって、数列$\\{b_n\\}$は初項$15$、公比$4$の等比数列であるから$$b_n=15\\cdot 4^{n-1}$$ゆえに、$n\\geq 2$のとき$$\\begin{align}a_n&=a_1+\\sum_{k=1}^{n-1}15\\cdot 4^{k-1}\\\\&=6+\\frac{15(4^{n-1}-1)}{4-1}\\\\&=5\\cdot 4^{n-1}+1\\cdots\\cdots(3)\\end{align}$$$n=1$のとき$$5\\cdot 4^0+1=6$$$a_1=6$であるから、$(3)$は$n=1$のときも成り立つ。",
+                        "したがって$$a_n=5\\cdot 4^{n-1}+1$$"
+                    ],
+                    "source": { "index": 0, "type": "別解" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -128,9 +146,14 @@
             "id": "PROB_0005",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 3a_n + 4n $$",
             "solution": "$$ a_n = 4 \\cdot 3^{n-1} - 2n - 1 $$",
-            "answer_steps": [
+            "pattern": 5,
+            "steps": [
                 {
-                    "content": []
+                    "content": [
+                        "$a_{n+1}=3a_n+4n\\cdots\\cdots(1)$とすると$$a_{n+2}=3a_{n+1}+4(n+1)\\cdots\\cdots(2)$$$(2)-(1)$から$$a_{n+2}-a_{n+1}=3(a_{n+1}-a_n)+4$$$a_{n+1}-a_n=b_n$とおくと$$b_{n+1}=3b_n+4$$これを変形すると$$b_{n+1}+2=3(b_n+2)$$また$$b_1+2=a_2-a_1+2=7-1+2=8$$よって、数列$\\{b_n+2\\}$は初項$8$、公比$3$の等比数列で$$b_n+2=8\\cdot 3^{n-1}$$すなわち$$b_n=8\\cdot 3^{n-1}-2$$$n\\geq 2$のとき$$\\begin{align}a_n&=a_1+\\sum_{k=1}^{n-1}(8\\cdot 3^{n-1}-2)\\\\&=1+\\frac{8(3^{n-1}-1)}{3-1}-2(n-1)\\\\&=4\\cdot 3^{n-1}-2n-1\\cdots\\cdots(3)\\end{align}$$$n=1$のとき$$4\\cdot 3^0-2\\cdot 1-1=1$$$a_1=1$であるから、$(3)$は$n=1$のときも成り立つ。",
+                        "したがって$$a_n=4\\cdot 3^{n-1}-2n-1$$"
+                    ],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -145,15 +168,18 @@
                     "entered_by": "WRITER_1"
                 }
             ],
-            "visible": true
+            "visible": true,
+            "note": "本誌に、別アプローチ$\\{a_n-(\\alpha n+\\beta)\\}$を等比数列とする解法も掲載されている。"
         },
         {
             "id": "PROB_0006",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 3, \\quad a_{n+1} = 2a_n + 3^{n+1} $$",
             "solution": "$$ a_n = 3^{n+1} - 3 \\cdot 2^n $$",
-            "answer_steps": [
+            "pattern": 6,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -174,9 +200,16 @@
             "id": "PROB_0007",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = \\frac{1}{5}, \\quad a_{n+1} = \\frac{ a_n }{ 4a_n - 1 } $$",
             "solution": "$$ a_n = \\frac{ 1 }{ 3 \\cdot (-1)^{n-1} + 2 } $$",
-            "answer_steps": [
+            "pattern": 7,
+            "steps": [
                 {
-                    "content": []
+                    "content": [
+                        "$a_{n+1}=\\frac{a_n}{4a_n-1}\\cdots\\cdots(1)$とする。",
+                        "$(1)$において、$a_{n+1}=0$とすると$a_n=0$であるから、$a_n=0$となる$n$があると仮定すると$$a_{n-1}=a_{n-2}=\\cdots\\cdots=a_1=0$$ところが$a_1=\\frac{1}{5}(\\neq 0)$であるから、これは矛盾。",
+                        "よって、すべての自然数$n$について$a_n\\neq0$である。",
+                        "$(1)$の両辺の逆数をとると$$\\frac{1}{a_{n+1}}=4-\\frac{1}{a_n}$$$\\frac{1}{a_n}=b_n$とおくと$$b_{n+1}=4-b_n$$これを変形すると$$b_{n+1}-2=-(b_n-2)$$また$$b_1-2=\\frac{1}{a_1}-2=5-2=3$$ゆえに、数列$\\{b_n-2\\}$は初項$3$、公比$-1$の等差数列で$$b_n-2=3\\cdot(-1)^{n-1}$$すなわち$$b_n=3\\cdot(-1)^{n-1}+2$$したがって$$a_n=\\frac{1}{b_n}=\\frac{1}{3\\cdot(-1)^{n-1}+2}$$"
+                    ],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -197,9 +230,11 @@
             "id": "PROB_0008",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 2 \\sqrt{ a_n } $$",
             "solution": "$$ a_n = 2^{ 2 - 2^{ 2-n } } $$",
-            "answer_steps": [
+            "pattern": 8,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -220,9 +255,11 @@
             "id": "PROB_0009",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 2, \\quad a_{n+1} = \\frac{ n+2 }{ n }a_n + 1 $$",
             "solution": "$$ a_n = \\frac{ n(3n+1) }{ 2 } $$",
-            "answer_steps": [
+            "pattern": 9,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -243,9 +280,11 @@
             "id": "PROB_0010",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = \\frac{1}{2}, \\quad (n+1)a_n = (n-1)a_{n-1}, (n\\geqq2) $$",
             "solution": "$$ a_n = \\frac{ 1 }{ n(n+1) } $$",
-            "answer_steps": [
+            "pattern": 10,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -266,9 +305,11 @@
             "id": "PROB_0011",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 0, \\quad a_2 = 1, \\quad a_{n+2} = a_{n+1} + 6a_n $$",
             "solution": "$$ a_n = \\frac{1}{5} \\{ 3^{n-1} - (-2)^{n-1} \\} $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -289,9 +330,11 @@
             "id": "PROB_0012",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 1, \\quad a_2 = 2, \\quad a_{n+2} + 4a_{n+1} - 5a_n = 0 $$",
             "solution": "$$ a_n = \\frac{1}{6} \\{ 7 - (-5)^{n-1} \\} $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -312,9 +355,11 @@
             "id": "PROB_0013",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 0, \\quad a_2 = 2, \\quad a_{n+2} - 4a_{n+1} + 4a_n = 0 $$",
             "solution": "$$ a_n = (n-1) \\cdot 2^{n-1} $$",
-            "answer_steps": [
+            "pattern": 12,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -335,9 +380,11 @@
             "id": "PROB_0014",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_2 = 1, \\quad a_{n+2} = a_{n+1} + a_n $$",
             "solution": "$$ a_n = \\frac{1}{\\sqrt{5}} \\Biggl\\{ \\left( \\frac{ 1+\\sqrt{5} }{ 2 } \\right)^n - \\left( \\frac{ 1-\\sqrt{5} }{ 2 } \\right)^n \\Biggr\\} $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -367,9 +414,11 @@
             "id": "PROB_0015",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 2, \\quad a_{n+1} - a_n + \\frac{1}{2} = 0 $$",
             "solution": "$$ a_n = -\\frac{1}{2}n + \\frac{5}{2} $$",
-            "answer_steps": [
+            "pattern": 1,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -390,9 +439,11 @@
             "id": "PROB_0016",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = -1, \\quad a_{n+1} + a_n = 0 $$",
             "solution": "$$ a_n = (-1)^n $$",
-            "answer_steps": [
+            "pattern": 2,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -413,9 +464,11 @@
             "id": "PROB_0017",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 3, \\quad 2a_{n+1} - 2a_n = 4n^2 + 2n - 1 $$",
             "solution": "$$ a_n = \\frac{1}{6}( 4n^3 - 3n^2 - 4n + 21 ) $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -436,9 +489,11 @@
             "id": "PROB_0018",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 2, \\quad a_{n+1} = 3a_n - 2 $$",
             "solution": "$$ a_n = 3^{n-1} + 1 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -459,9 +514,11 @@
             "id": "PROB_0019",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 3, \\quad 2a_{n+1} - a_n + 2 = 0 $$",
             "solution": "$$ a_n = 5 \\left( \\frac{1}{2} \\right)^{n-1} - 2 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -482,9 +539,11 @@
             "id": "PROB_0020",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = -2, \\quad a_{n+1} = -3a_n - 4n + 3 $$",
             "solution": "$$ a_n = -2 \\cdot (-3)^{n-1} - n + 1 $$",
-            "answer_steps": [
+            "pattern": 5,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -505,9 +564,11 @@
             "id": "PROB_0021",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 4, \\quad a_{n+1} = 4a_n - 2^{n+1} $$",
             "solution": "$$ a_n = 2^{2n-1} + 2^n $$",
-            "answer_steps": [
+            "pattern": 6,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -528,9 +589,11 @@
             "id": "PROB_0022",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = \\frac{ 3a_n }{ 6a_n + 1 } $$",
             "solution": "$$ a_n = \\frac{ 3^{n-1} }{ 3^n - 2 } $$",
-            "answer_steps": [
+            "pattern": 7,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -551,9 +614,11 @@
             "id": "PROB_0023",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 2a_n^2 $$",
             "solution": "$$ a_n = 2^{ 2^{n-1} - 1 } $$",
-            "answer_steps": [
+            "pattern": 8,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -574,9 +639,11 @@
             "id": "PROB_0024",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = \\frac{2}{3}, \\quad (n+2)a_n = (n-1)a_{n-1}, (n\\geqq2) $$",
             "solution": "$$ a_n = \\frac{ 4 }{ n(n+1)(n+2) } $$",
-            "answer_steps": [
+            "pattern": 10,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -597,9 +664,11 @@
             "id": "PROB_0025",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_2 = 2, \\quad a_{n+2} - 2a_{n+1} - 3a_n = 0 $$",
             "solution": "$$ a_n = \\frac{1}{4} { 3^n - (-1)^n } $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -620,9 +689,11 @@
             "id": "PROB_0026",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 0, \\quad a_2 = 1, \\quad 5a_{n+2} = 3a_{n+1} + 2a_n $$",
             "solution": "$$ a_n = \\frac{5}{7} \\Biggl\\{ 1 - \\left( -\\frac{2}{5} \\right)^{n-1} \\Biggr\\} $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -643,9 +714,11 @@
             "id": "PROB_0027",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 0, \\quad a_2 = 3, \\quad a_{n+2} - 6a_{n+1} + 9a_n = 0 $$",
             "solution": "$$ a_n = (n-1) \\cdot 3^{n-1} $$",
-            "answer_steps": [
+            "pattern": 12,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -666,9 +739,11 @@
             "id": "PROB_0028",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} - a_n = 5 $$",
             "solution": "$$ a_n = 5n - 4 $$",
-            "answer_steps": [
+            "pattern": 1,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -689,9 +764,11 @@
             "id": "PROB_0029",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 4, \\quad a_{n+1} = a_n - 2 $$",
             "solution": "$$ a_n = -2n + 6 $$",
-            "answer_steps": [
+            "pattern": 1,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -712,9 +789,11 @@
             "id": "PROB_0030",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 2, \\quad a_{n+1} = 5a_n $$",
             "solution": "$$ a_n = 2 \\cdot 5^{n-1} $$",
-            "answer_steps": [
+            "pattern": 2,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -735,9 +814,11 @@
             "id": "PROB_0031",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 5, \\quad a_{n+1} = -3a_n $$",
             "solution": "$$ a_n = 5(-3)^{n-1} $$",
-            "answer_steps": [
+            "pattern": 2,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -758,9 +839,11 @@
             "id": "PROB_0032",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} - a_n = 2n $$",
             "solution": "$$ a_n = n^2 - n + 1 $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -781,9 +864,11 @@
             "id": "PROB_0033",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 2, \\quad a_{n+1} - a_n = 3n^2 + n $$",
             "solution": "$$ a_n = n^3 - n^2 + 2 $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -804,9 +889,11 @@
             "id": "PROB_0034",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = a_n + n^2 $$",
             "solution": "$$ a_n = \\frac{1}{6}( 2n^3 - 3n^2 + n + 6 ) $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -836,9 +923,11 @@
             "id": "PROB_0035",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = a_n + 4^n $$",
             "solution": "$$ a_n = \\frac{1}{3}( 4^n - 1 ) $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -859,9 +948,11 @@
             "id": "PROB_0036",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 2, \\quad a_{n+1} = 3a_n - 2 $$",
             "solution": "$$ a_n = 3^{n-1} + 1 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -882,9 +973,11 @@
             "id": "PROB_0037",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = \\frac{1}{3}a_n + 2 $$",
             "solution": "$$ a_n = -2 \\left( \\frac{1}{3} \\right)^{n-1} + 3 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -905,9 +998,11 @@
             "id": "PROB_0038",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 9 - 2a_n $$",
             "solution": "$$ a_n = (-2)^n + 3 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -928,9 +1023,11 @@
             "id": "PROB_0039",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 4a_n + 3 $$",
             "solution": "$$ a_n = 2 \\cdot 4^{n-1} - 1 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -951,9 +1048,11 @@
             "id": "PROB_0040",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = -2a_n + 1 $$",
             "solution": "$$ a_n = \\frac{ 1 - (-2)^n }{ 3 } $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -974,9 +1073,11 @@
             "id": "PROB_0041",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 0, \\quad 2a_{n+1} - 3a_n = 1 $$",
             "solution": "$$ a_n = \\left( \\frac{3}{2} \\right)^{n-1} - 1 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -997,9 +1098,11 @@
             "id": "PROB_0042",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = \\frac{ 3a_n }{ a_n + 3 } $$",
             "solution": "$$ a_n = \\frac{ 3 }{ n + 2 } $$",
-            "answer_steps": [
+            "pattern": 7,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1014,15 +1117,17 @@
                     "entered_by": "WRITER_1"
                 }
             ],
-            "visible": false
+            "visible": true
         },
         {
             "id": "PROB_0043",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = \\frac{ a_n }{ a_n + 1 } $$",
             "solution": "$$ a_n = \\frac{1}{n} $$",
-            "answer_steps": [
+            "pattern": 7,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1043,9 +1148,11 @@
             "id": "PROB_0044",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = \\frac{1}{2}, \\quad a_{n+1} = \\frac{ a_n }{ 2a_n + 3 } $$",
             "solution": "$$ a_n =  \\frac{ 1 }{ 3^n - 1 } $$",
-            "answer_steps": [
+            "pattern": 7,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1066,9 +1173,11 @@
             "id": "PROB_0045",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 10, \\quad a_{n+1} = 2a_n + 2^{n+2} $$",
             "solution": "$$ a_n = ( 2n + 3 ) \\cdot 2^n $$",
-            "answer_steps": [
+            "pattern": 6,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1089,9 +1198,11 @@
             "id": "PROB_0046",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 3, \\quad a_{n+1} = 6a_n + 3^{n+1} $$",
             "solution": "$$ a_n = ( 2^n - 1 ) \\cdot 3^n $$",
-            "answer_steps": [
+            "pattern": 6,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1112,9 +1223,11 @@
             "id": "PROB_0047",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 2a_n + 3n $$",
             "solution": "$$ a_n = 7 \\cdot 2^{n-1} - 3n - 3 $$",
-            "answer_steps": [
+            "pattern": 5,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1135,9 +1248,11 @@
             "id": "PROB_0048",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad (n+1)a_{n+1} = na_n $$",
             "solution": "$$ a_n = \\frac{1}{n} $$",
-            "answer_steps": [
+            "pattern": 9,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1152,15 +1267,18 @@
                     "entered_by": "WRITER_1"
                 }
             ],
-            "visible": true
+            "visible": true,
+            "note": "12パターンのどれとも違う気もする。"
         },
         {
             "id": "PROB_0049",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad na_{n+1} = (n+1)a_n $$",
             "solution": "$$ a_n = n $$",
-            "answer_steps": [
+            "pattern": 9,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1175,15 +1293,18 @@
                     "entered_by": "WRITER_1"
                 }
             ],
-            "visible": true
+            "visible": true,
+            "note": "パターン9と解き方は似ているが、与式の形が異なる。"
         },
         {
             "id": "PROB_0050",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 0, \\quad a_2 = 1, \\quad a_{n+2} + a_{n+1} - 6a_n = 0 $$",
             "solution": "$$ a_n = \\frac{ 2^{n-1} - (-3)^{n-1} }{ 5 } $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -1204,9 +1325,11 @@
             "id": "PROB_0051",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_2 = 2, \\quad a_{n+2} + 3a_{n+1} - 4a_n = 0 $$",
             "solution": "$$ a_n = \\frac{ 6 - (-4)^{n-1} }{ 5 } $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -1227,9 +1350,11 @@
             "id": "PROB_0052",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 0, \\quad a_2 = 1, \\quad a_{n+2} + 5a_{n+1} + 6a_n = 0 $$",
             "solution": "$$ a_n = (-2)^{n-1} - (-3)^{n-1} $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -1250,9 +1375,11 @@
             "id": "PROB_0053",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_2 = 4, \\quad a_{n+2} - 6a_{n+1} + 9a_n = 0 $$",
             "solution": "$$ a_n = (n+2) \\cdot 3^{n-2} $$",
-            "answer_steps": [
+            "pattern": 12,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -1273,9 +1400,11 @@
             "id": "PROB_0054",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 5, \\quad a_{n+1} = 8a_n^2 $$",
             "solution": "$$ a_n = \\frac{1}{8} \\cdot {40^2}^{n-1} $$",
-            "answer_steps": [
+            "pattern": 8,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1296,9 +1425,11 @@
             "id": "PROB_0055",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 2, \\quad a_{n+1} = a_n + 3 $$",
             "solution": "$$ a_n = 3n - 1 $$",
-            "answer_steps": [
+            "pattern": 1,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1319,9 +1450,11 @@
             "id": "PROB_0056",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = -2a_n $$",
             "solution": "$$ a_n = (-2)^{n-1} $$",
-            "answer_steps": [
+            "pattern": 2,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1342,9 +1475,11 @@
             "id": "PROB_0057",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 3, \\quad a_{n+1} = a_n - 5 $$",
             "solution": "$$ a_n = -5n + 8 $$",
-            "answer_steps": [
+            "pattern": 1,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1365,9 +1500,11 @@
             "id": "PROB_0058",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = -2, \\quad a_{n+1} = 3a_n $$",
             "solution": "$$ a_n = -2 \\cdot 3^{n-1} $$",
-            "answer_steps": [
+            "pattern": 2,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1388,9 +1525,11 @@
             "id": "PROB_0059",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 3, \\quad a_{n+1} = a_n + 2^n $$",
             "solution": "$$ a_n = 2^n + 1 $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1411,9 +1550,11 @@
             "id": "PROB_0060",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 2, \\quad a_{n+1} = a_n + 3^n $$",
             "solution": "$$ a_n = \\frac{ 3^n + 1 }{ 2 } $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1434,9 +1575,11 @@
             "id": "PROB_0061",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 2, \\quad a_{n+1} = a_n + n^2 + n $$",
             "solution": "$$ a_n = \\frac{1}{3}(n-1)n(n+1) + 2 $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1457,9 +1600,11 @@
             "id": "PROB_0062",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 3a_n + 2 $$",
             "solution": "$$ a_n = 2 \\cdot 3^{n-1} - 1 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1480,9 +1625,11 @@
             "id": "PROB_0063",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 2a_n + 3 $$",
             "solution": "$$ a_n = 4 \\cdot 2^{n-1} - 3 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1497,15 +1644,17 @@
                     "entered_by": "WRITER_1"
                 }
             ],
-            "visible": false
+            "visible": true
         },
         {
             "id": "PROB_0064",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 0, \\quad a_{n+1} = 1 - \\frac{1}{2}a_n $$",
             "solution": "$$ a_n = -\\frac{2}{3} \\cdot \\left(-\\frac{1}{2}\\right)^{n-1} + \\frac{2}{3} $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1526,9 +1675,11 @@
             "id": "PROB_0065",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 0, \\quad a_2 = 1, \\quad a_{n+2} = 3a_{n+1} + 10a_n $$",
             "solution": "$$ \\frac{1}{7} \\Bigl\\{ 5^{n-1} - (-2)^{n-1} \\Bigr\\} $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -1549,9 +1700,11 @@
             "id": "PROB_0066",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_2 = 4, \\quad a_{n+2} + a_{n+1} - 6a_n = 0 $$",
             "solution": "$$ a_n = \\frac{2}{15}(-3)^n + \\frac{7}{10}2^n $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -1572,9 +1725,11 @@
             "id": "PROB_0067",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 0, \\quad a_2 = 1, \\quad a_{n+2} = 8a_{n+1} - 7a_n $$",
             "solution": "$$ a_n = \\frac{1}{6}\\left(7^{n-1} - 1\\right) $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -1595,9 +1750,11 @@
             "id": "PROB_0068",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 3, \\quad a_{n+1} = a_n + 5 $$",
             "solution": "$$ a_n = 5n - 2 $$",
-            "answer_steps": [
+            "pattern": 1,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1618,9 +1775,11 @@
             "id": "PROB_0069",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 3, \\quad a_{n+1} = a_n + 4^n $$",
             "solution": "$$ a_n = \\frac{ 4^n + 5 }{ 3 } $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1641,9 +1800,11 @@
             "id": "PROB_0070",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = -1, \\quad a_{n+1} = a_n + 4n - 1 $$",
             "solution": "$$ a_n = 2n^2 - 3n $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1664,9 +1825,11 @@
             "id": "PROB_0071",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 4, \\quad a_{n+1} = a_n + 5^n $$",
             "solution": "$$ a_n = \\frac{ 5^n + 11 }{ 4 } $$",
-            "answer_steps": [
+            "pattern": 3,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1687,9 +1850,11 @@
             "id": "PROB_0072",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 5, \\quad a_{n+1} = 6a_n + 5 $$",
             "solution": "$$ a_n = 6^n - 1 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1710,9 +1875,11 @@
             "id": "PROB_0073",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 2a_n - 3 $$",
             "solution": "$$ a_n = -2^n + 3 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1733,9 +1900,11 @@
             "id": "PROB_0074",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad 2a_{n+1} - a_n + 2 = 0 $$",
             "solution": "$$ a_n = 3\\left( \\frac{1}{2}^{n-1} \\right) - 2 $$",
-            "answer_steps": [
+            "pattern": 4,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1756,9 +1925,11 @@
             "id": "PROB_0075",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 2a_n + n - 1 $$",
             "solution": "$$ a_n = 2^n - n $$",
-            "answer_steps": [
+            "pattern": 5,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1779,9 +1950,11 @@
             "id": "PROB_0076",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 3a_n + 2n - 1 $$",
             "solution": "$$ a_n = 2 \\cdot 3^{n-1} - n $$",
-            "answer_steps": [
+            "pattern": 5,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1802,9 +1975,11 @@
             "id": "PROB_0077",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad \\frac{1}{a_{n+1}} - \\frac{1}{a_n} = 3^{n-1} $$",
             "solution": "$$ a_n = \\frac{ 2 }{ 3^{n-1} + 1 } $$",
-            "answer_steps": [
+            "pattern": 7,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1825,9 +2000,11 @@
             "id": "PROB_0078",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = \\frac{ a_n }{ 4a_n + 3 } $$",
             "solution": "$$ a_n = \\frac{ 1 }{ 3^n - 2 } $$",
-            "answer_steps": [
+            "pattern": 7,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1848,9 +2025,11 @@
             "id": "PROB_0079",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 3, \\quad a_{n+1} = \\frac{ a_n }{ 2a_n + 4 } $$",
             "solution": "$$ a_n = \\frac{ 3 }{ 3 \\cdot 4^{n-1} - 2 } $$",
-            "answer_steps": [
+            "pattern": 7,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1871,9 +2050,11 @@
             "id": "PROB_0080",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 3a_n + 4^n $$",
             "solution": "$$ a_n = 4^n - 3^n $$",
-            "answer_steps": [
+            "pattern": 6,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1894,9 +2075,11 @@
             "id": "PROB_0081",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = 2a_n + 3^n $$",
             "solution": "$$ a_n = 3^n - 2^n $$",
-            "answer_steps": [
+            "pattern": 6,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
@@ -1917,9 +2100,11 @@
             "id": "PROB_0082",
             "statement": "次の条件によって定められる数列 $\\{a_n\\}$ の一般項を求めよ。 $$ a_1 = 1, \\quad a_2 = 4, \\quad a_{n+2} - 5a_{n+1} + 6a_n = 0 $$",
             "solution": "$$ a_n = 2 \\cdot 3^{n-1} - 2^{n-1} $$",
-            "answer_steps": [
+            "pattern": 11,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項", "隣接三項間漸化式"],
@@ -1940,9 +2125,11 @@
             "id": "PROB_0083",
             "statement": "次の条件によって定められる数列 $ \\{a_n\\} $ の一般項を求めよ。 $$ a_1 = 1, \\quad a_{n+1} = \\frac{ a_n }{ 6 - 15a_n } $$",
             "solution": "$$ a_n = \\frac{ 1 }{ 3 - 2 \\cdot 6^{n-1} } $$",
-            "answer_steps": [
+            "pattern": 7,
+            "steps": [
                 {
-                    "content": []
+                    "content": [],
+                    "source": { "index": 0, "type": "解答" }
                 }
             ],
             "tags": ["数B", "数列", "漸化式", "一般項"],
