@@ -9,15 +9,41 @@
     .problem { background: #fff; border: 1px solid #ccc; border-radius: 8px; margin: 1em 0; padding: 1em; }
     .problem-id { font-weight: bold; color: #2c3e50; }
     .statement { margin-top: 0.5em; }
+    hr { border: none; border-top: 1px solid #ccc; margin: 1.5em 0; width: 100%; }
+    .filter-area { margin-bottom: 1em; }
+    label { margin-right: 0.5em; }
+    select { font-size: 1em; }
+    .count-area { margin-bottom: 1em; font-size: 1em; color: #555; }
   </style>
 </head>
 <body>
   <h1>問題リスト</h1>
+  <div class="filter-area">
+    <label for="patternFilter">絞り込み：</label>
+    <select id="patternFilter">
+      <option value="all">すべて表示</option>
+      <option value="1">パターン1</option>
+      <option value="2">パターン2</option>
+      <option value="3">パターン3</option>
+      <option value="4">パターン4</option>
+      <option value="5">パターン5</option>
+      <option value="6">パターン6</option>
+      <option value="7">パターン7</option>
+      <option value="8">パターン8</option>
+      <option value="9">パターン9</option>
+      <option value="10">パターン10</option>
+      <option value="11">パターン11</option>
+      <option value="12">パターン12</option>
+    </select>
+    <span class="count-area" id="countArea"></span>
+  </div>
   <input type="file" id="fileInput" accept=".json">
   <div id="problems"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script>
+    let allProblems = [];
+
     document.getElementById('fileInput').addEventListener('change', function(event) {
       const file = event.target.files[0];
       if (!file) return;
@@ -25,13 +51,28 @@
       reader.onload = function(e) {
         try {
           const data = JSON.parse(e.target.result);
-          renderProblems(data.problems);
+          allProblems = data.problems || [];
+          renderProblems(getFilteredProblems());
         } catch (err) {
           alert('JSONの読み込みに失敗しました');
         }
       };
       reader.readAsText(file, 'utf-8');
     });
+
+    document.getElementById('patternFilter').addEventListener('change', function() {
+      renderProblems(getFilteredProblems());
+    });
+
+    function getFilteredProblems() {
+      const filterValue = document.getElementById('patternFilter').value;
+      if (filterValue === "all") {
+        return allProblems;
+      } else {
+        // パターン番号は数値型で格納されていることを想定
+        return allProblems.filter(prob => String(prob.pattern) === filterValue);
+      }
+    }
 
     function renderProblems(problems) {
       const container = document.getElementById('problems');
@@ -40,10 +81,10 @@
         const div = document.createElement('div');
         div.className = 'problem';
 
-        // 問題ID
+        // 問題IDとパターン番号を表示
         const idDiv = document.createElement('div');
         idDiv.className = 'problem-id';
-        idDiv.textContent = prob.id;
+        idDiv.textContent = `${prob.id}（パターン${prob.pattern}）`;
         div.appendChild(idDiv);
 
         // statement（KaTeXレンダリング）
@@ -52,8 +93,41 @@
         stDiv.innerHTML = renderKaTeX(prob.statement);
         div.appendChild(stDiv);
 
+        // stepsリストの最初の要素のcontentが存在するかどうかを判定
+        let hasStepsContent = false;
+        if (
+          prob.steps &&
+          prob.steps.length > 0 &&
+          prob.steps[0].content &&
+          Array.isArray(prob.steps[0].content) &&
+          prob.steps[0].content.length > 0
+        ) {
+          hasStepsContent = true;
+        }
+
+        // stepsが存在する場合のみhrとstepsを表示
+        if (hasStepsContent) {
+          // 横線を追加
+          const hr = document.createElement('hr');
+          div.appendChild(hr);
+
+          // steps（KaTeXレンダリング）
+          const stepsDiv = document.createElement('div');
+          stepsDiv.className = 'steps';
+          // stepsリストの最初の要素のcontentのすべての要素を一つずつレンダリングし、改行でつなぐ
+          let stepsHtml = prob.steps[0].content.map(item => renderKaTeX(item)).join('<br>');
+          stepsDiv.innerHTML = stepsHtml;
+          div.appendChild(stepsDiv);
+        }
+
         container.appendChild(div);
       });
+
+      // 件数表示
+      const countArea = document.getElementById('countArea');
+      const total = allProblems.length;
+      const filtered = problems.length;
+      countArea.textContent = `（${filtered} / ${total}）`;
     }
 
     // KaTeXで数式をレンダリング
